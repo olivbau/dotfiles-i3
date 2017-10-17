@@ -1,0 +1,269 @@
+[colors]
+background = #282C34
+foreground = #ABB2BF
+foreground-alt= #528BFF
+black = #000000
+red = #E06C75
+green = #98C379
+orange = #D19A66
+blue = #61AEEE
+magenta = #C678DD
+cyan = #56B6C2
+lightgray = #ABB2BF
+darkgray = #5C6370
+white = #FFFFFF
+yellow = #ffb52a
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[bar/default]
+
+width = 100%
+height = 27
+
+font-0 = fixed:pixelsize=10
+font-1 = FontAwesome:size=11
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+tray-position = right
+tray-maxsize = 16
+tray-transparent = false
+
+modules-left = i3
+modules-center = xwindow
+modules-right = keyboard volume battery wireless-network wired-network calendar clock powermenu
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/xwindow]
+type = internal/xwindow
+
+label = %title%
+label-maxlen = 70
+
+format-foreground = ${colors.yellow}
+format-prefix = " "
+format-suffix = " "
+
+format-margin = 1
+
+[module/keyboard]
+type = internal/xkeyboard
+
+format =  <label-layout>
+format-foreground = ${colors.magenta}
+format-label-prefix= " "
+
+[module/clock]
+type = internal/date
+
+interval = 1.0
+
+time = %H:%M:%S
+
+format =  <label>
+format-prefix = " "
+format-foreground = ${colors.orange}
+
+label = %time%
+
+[module/calendar]
+type = internal/date
+
+interval = 1.0
+
+date = %d/%m/%y
+
+format = %{T1} <label>
+format-foreground = ${colors.orange}
+format-prefix = " "
+
+label = %date%
+
+[module/volume]
+type = internal/volume
+master-mixer = Master
+
+format-volume-foreground = ${colors.green}
+
+format-volume = %{T1} <label-volume>
+
+format-volume-prefix = " "
+format-muted-prefix = " "
+
+label-muted =  [muted]
+label-muted-foreground = ${colors.red}
+label-muted-font = 1
+
+[module/powermenu]
+type = custom/menu
+
+format-prefix = " "
+
+label-open = 
+label-open-foreground = ${colors.red}
+label-close = 
+label-close-foreground = ${colors.red}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log out
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = log out
+menu-3-0-exec = i3-msg exit
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
+
+[module/battery]
+type = internal/battery
+
+full-at = 98
+
+battery = BAT0
+adapter = AC0
+
+poll-interval = 5
+
+time-format = %H:%M
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = 
+
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.foreground-alt}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.orange}
+
+format-full-foreground = ${colors.green}
+
+format-charging-prefix = " "
+format-discharging-prefix = " "
+format-full-prefix = " "
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+;=====================================================
+; Module MPD:
+; Music player
+;=====================================================
+[module/mpd]
+type = internal/mpd
+
+format-online	= <label-song><icon-prev><icon-stop><toggle><icon-next>
+
+icon-prev            = " "
+icon-prev-background = ${colors.main-bar-background}
+
+icon-stop						 = " "
+icon-stop-background = ${colors.main-bar-background}
+
+icon-play						 = " "
+icon-play-background = ${colors.main-bar-background}
+
+icon-pause            = " "
+icon-pause-background = ${colors.main-bar-background}
+
+icon-next            = "  "
+icon-next-background = ${colors.main-bar-background}
+
+label-song            = " %artist% - %title%" 
+label-song-maxlen     = 30
+label-song-ellipsis   = true
+label-song-background = ${colors.main-bar-background}
+;=====================================================
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+
+index-sort = true
+wrapping-scroll = true
+
+label-focused = " %index% "
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.yellow}
+label-focused-padding = 1
+
+label-unfocused = " %index% "
+label-unfocused-padding = 1
+
+label-urgent = " %index% "
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+
+label-visible = " %index% "
+label-visible-padding = 1
+
+[module/wireless-network]
+type = internal/network
+interface = wlp3s0
+
+format-connected-prefix = " "
+format-disconnected-prefix = " "
+
+format-connected = <label-connected>
+
+format-disconnected = <label-disconnected>
+
+label-connected =  %essid%
+label-connected-foreground = ${colors.foreground-alt}
+
+label-disconnected =  [not connected]
+label-disconnected-foreground = ${colors.red}
+
+[module/wired-network]
+type = internal/network
+interface = enp4s0f2
+
+format-connected-prefix = " "
+format-disconnected-prefix = " "
+
+format-connected = <label-connected>
+
+format-disconnected = <label-disconnected>
+
+label-connected =  %local_ip%
+label-connected-foreground = ${colors.foreground-alt}
+
+label-disconnected =  [not plugged]
+label-disconnected-foreground = ${colors.red}
