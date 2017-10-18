@@ -50,9 +50,13 @@ sudo apt-get install rofi i3 rxvt-unicode compton fonts-roboto zsh arc-theme lxa
 sudo apt-get install rofi i3 rxvt-unicode compton fonts-roboto zsh arc-theme lxappearance feh fonts-font-awesome
 ```
 
+#### 2. Change Windows Manager
 
+Logout and Switch to i3
 
-#### 2. Install i3-gaps
+Generate default config
+
+#### 3. Install i3-gaps
 
 [reference](https://github.com/Airblader/i3/wiki/Compiling-&-Installing)
 
@@ -71,20 +75,18 @@ make
 sudo make install
 ```
 
-#### 3. Install polybar
+#### 4. Install polybar
 
 [reference](https://github.com/jaagr/polybar#building-from-source)
 
 ```shell
-cd ~/
-git clone --branch 3.0.5 --recursive https://github.com/jaagr/polybar
-mkdir polybar/build
-cd polybar/build
-cmake ..
-sudo make install
+wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
+sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu xenial-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
+sudo apt-get update
+sudo apt-get install polybar
 ```
 
-#### 4. Install Papirus
+#### 5. Install Papirus
 
 [reference](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
 
@@ -94,7 +96,7 @@ sudo apt-get update
 sudo apt-get install papirus-icon-theme
 ```
 
-#### 5. Install Oh My Zsh
+#### 6. Install Oh My Zsh
 
 [reference](https://github.com/robbyrussell/oh-my-zsh/blob/master/README.md#basic-installation)
 
@@ -102,15 +104,7 @@ sudo apt-get install papirus-icon-theme
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
-#### 6. Run load script
-
-:warning: Save your dotfiles before !!
-
-```shell
-sh ~/dotfiles/scripts/load.sh
-```
-
-#### 7. lxappearence
+#### 7. run lxappearence
 
 1. Widget (Arc-Dark Roboto 10)
 
@@ -122,6 +116,21 @@ sh ~/dotfiles/scripts/load.sh
 
    ![lxappearence ](https://github.com/olivbau/dotfiles/blob/master/screenshots/18_10_2017_19_10_11.png?raw=true)
 
+
+
+#### 8. Run load script
+
+⚠️ Save your dotfiles before !!
+
+```shell
+git clone https://github.com/olivbau/dotfiles.git ~/dotfiles
+sh ~/dotfiles/scripts/load.sh
+```
+
+####9. Run load script
+
+Logout and login and :bomb::boom:
+
 ### Copy dotfiles
 
 Two main methods:
@@ -131,6 +140,12 @@ Two main methods:
 2. Use script
 
    `sh ./scripts/load.sh`
+
+### Tips
+
+* Refresh i3: `win+shift+r`
+* Refresh .Xresources: `source ~/.Xresources`
+* Set zsh as default shell: `chsh` and write `/bin/zsh`
 
 ## Screenshots
 
