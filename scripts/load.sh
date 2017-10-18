@@ -43,3 +43,6 @@ else
 	echo ".zshrc not replaced"
 fi
 
+#fonts 
+cp ~/dotfiles/fonts/* ~/.fonts
+fc-cache -vf ~/.fonts
