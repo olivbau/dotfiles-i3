@@ -184,8 +184,8 @@ set_from_resource	$color15_i3wmthemer	color15
 
 client.background	$background_i3wmthemer
 
-client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$foreground_i3wmthemer		$foreground_i3wmthemer
-client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color00_i3wmthemer		$color00_i3wmthemer
-client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color00_i3wmthemer		$color00_i3wmthemer
-client.urgent		$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color00_i3wmthemer		$color00_i3wmthemer
-client.placeholder	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color00_i3wmthemer		$color00_i3wmthemer
+client.focused         	#FFCF76	$background_i3wmthemer	#FFCF76	#FFCF76		#FFCF76
+client.unfocused       	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
+client.focused_inactive	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
+client.urgent		#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
+client.placeholder	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
