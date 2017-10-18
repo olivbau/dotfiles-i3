@@ -16,3 +16,6 @@ cp -f ~/.Xresources $dotdir/Xresources
 
 # zsh
 cp -f ~/.zshrc $dotdir/zsh
+
+
+cp -f ~/.oh-my-zsh/custom/themes/flat.zsh-theme $dotdir/oh-my-zsh/custom/themes
