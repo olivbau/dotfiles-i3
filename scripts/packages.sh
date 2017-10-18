@@ -3,14 +3,14 @@
 #compton
 #lxappearance
 #feh
-	polybar
+	#polybar
 #fonts-font-awesome
-papirus-icon-theme
+	#papirus-icon-theme
 #arc-theme
 #fonts-roboto
 #git 
 #zsh
-i3-gaps
+	#i3-gaps
 
 
 cd ~/

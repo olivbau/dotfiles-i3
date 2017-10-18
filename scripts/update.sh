@@ -1,5 +1,5 @@
 
-dotdir=~/Documents/dotfiles                    # dotfiles directory
+dotdir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 # i3
