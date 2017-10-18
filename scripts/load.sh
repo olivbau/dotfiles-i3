@@ -1,4 +1,7 @@
 
+#wallpaper
+mkdir -p ~/.wallpaper
+cp -f ~/dotfiles/wallpaper/space.png ~/.wallpaper/space.png
 
 if [ -f ~/.Xresources ]
 then
@@ -49,3 +52,4 @@ then
 else 
 	echo ".zshrc not replaced"
 fi
+
