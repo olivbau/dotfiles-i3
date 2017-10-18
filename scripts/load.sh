@@ -27,13 +27,9 @@ else
 	echo "oh-my-zsh theme not replaced"
 fi
 
-if [ -f ~/.config/polybar/config ]
-then
-	cp -f ~/dotfiles/polybar/config ~/.config/polybar/config
-	echo "polybar config replaced"
-else 
-	echo "polybar config not replaced"
-fi
+mkdir -p ~/.config/polybar/
+cp -f ~/dotfiles/polybar/config ~/.config/polybar/config
+echo "polybar config replaced"
 
 if [ -f ~/.zshrc ]
 then
