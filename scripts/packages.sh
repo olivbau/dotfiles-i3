@@ -39,3 +39,7 @@ sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" >> /et
 
 sudo apt-get update
 sudo apt-get install papirus-icon-theme polybar
+
+#oh my zsh
+cd ~/
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"

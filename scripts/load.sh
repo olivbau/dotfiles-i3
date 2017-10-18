@@ -3,22 +3,12 @@
 mkdir -p ~/.wallpaper
 cp -f ~/dotfiles/wallpaper/space.png ~/.wallpaper/space.png
 
-if [ -f ~/.Xresources ]
-then
-	cp -f ~/dotfiles/Xresources/.Xresources ~/.Xresources
-	echo ".Xresources replaced"
-else 
-	echo ".Xresources not replaced"
-fi
+cp -f ~/dotfiles/Xresources/.Xresources ~/.Xresources
+echo ".Xresources replaced"
 
 
-if [ -f ~/.config/compton.conf ]
-then
-	cp -f ~/dotfiles/compton/compton.conf ~/.config/compton.conf
-	echo "Compton replaced"
-else 
-	echo "Compton not replaced"
-fi
+cp -f ~/dotfiles/compton/compton.conf ~/.config/compton.conf
+echo "Compton replaced"
 
 if [ -f ~/.config/i3/config ]
 then
