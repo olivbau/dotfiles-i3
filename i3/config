@@ -152,7 +152,6 @@ bindsym $mod+r mode "resize"
 # startup
 exec --no-startup-id feh --bg-scale ~/.wallpaper/space.png
 exec --no-startup-id compton
-exec_always --no-startup-id "killall polybar;polybar -r default"
 exec --no-startup-id nm-applet
 
 # i3-gaps
@@ -212,3 +211,5 @@ bindsym XF86AudioPrev exec "playerctl previous; clementine --previous"
 bindsym $mod+XF86AudioLowerVolume exec "playerctl previous; clementine --previous"
 bindsym $mod+XF86AudioRaiseVolume exec "playerctl next; clementine --next"
 bindsym $mod+XF86AudioMute exec "clementine --play-pause"
+
+exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh

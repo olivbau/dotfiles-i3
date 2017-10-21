@@ -29,6 +29,7 @@ fi
 
 mkdir -p ~/.config/polybar/
 cp -f ~/dotfiles/polybar/config ~/.config/polybar/config
+cp -f ~/dotfiles/polybar/launch.sh ~/.config/polybar/launch.sh
 echo "polybar config replaced"
 
 if [ -f ~/.zshrc ]
