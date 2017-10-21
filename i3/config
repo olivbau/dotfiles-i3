@@ -42,6 +42,7 @@ bindsym $mod+d exec rofi -show run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -146,23 +147,26 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
-
 
 # startup
 exec --no-startup-id feh --bg-scale ~/.wallpaper/space.png
 exec --no-startup-id compton
-exec_always --no-startup-id"killall polybar;polybar -r default"
+exec_always --no-startup-id "killall polybar;polybar -r default"
+exec --no-startup-id nm-applet
 
+# i3-gaps
 gaps inner 10
 smart_gaps on
 smart_borders on
+
 # window
 new_window pixel 2
 new_float pixel 2
-
 hide_edge_borders none
+
+
+# colors
 set_from_resource       $background_i3wmthemer  background
 set_from_resource	$foreground_i3wmthemer	foreground
 set_from_resource	$color00_i3wmthemer	color0
@@ -189,3 +193,22 @@ client.unfocused       	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthem
 client.focused_inactive	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
 client.urgent		#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
 client.placeholder	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
+
+
+# Pulse Audio controls
+#increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+#decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
+#toggle mute sound
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
+
+# Media player controls
+bindsym XF86AudioPlay exec "playerctl play; clementine --play"
+bindsym XF86AudioPause exec "playerctl pause; clementine --pause"
+bindsym XF86AudioNext exec "playerctl next; clementine --next"
+bindsym XF86AudioPrev exec "playerctl previous; clementine --previous"
+
+bindsym $mod+XF86AudioLowerVolume exec "playerctl previous; clementine --previous"
+bindsym $mod+XF86AudioRaiseVolume exec "playerctl next; clementine --next"
+bindsym $mod+XF86AudioMute exec "clementine --play-pause"
