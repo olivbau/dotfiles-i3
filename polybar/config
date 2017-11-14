@@ -18,6 +18,32 @@ screenchange-reload = true
 margin-top = 0
 margin-bottom = 0
 
+[bar/single]
+width = 100%
+height = 27
+
+tray-position = right
+tray-maxsize = 16
+tray-transparent = false
+
+font-0 = fixed:pixelsize=10
+font-1 = FontAwesome:size=11
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+modules-left = i3
+modules-center = xwindow
+modules-right = keyboard wlan eth volume battery calendar clock powermenu tray
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
 [bar/one]
 monitor = ${env:MONITOR:HDMI-1}
 width = 100%
