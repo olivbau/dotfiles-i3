@@ -41,7 +41,22 @@ bindsym $mod+d exec rofi -show run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+set $work_in_temp move container to workspace Silentcast,workspace Silentcast
 
+set $return_from_temp move container to workspace back_and_forth,workspace back_and_forth
+
+set $iconify move container to workspace Silentcast,workspace Silentcast,floating disable,fullscreen enable,workspace back_and_forth
+
+set $deiconify workspace Silentcast,border none,fullscreen disable,floating enable,move absolute position 0 0,resize set 1920 1080,move container to workspace back_and_forth,workspace back_and_forth
+
+# change from fullscreen to floating_fullscreen because iw3m won't show other windows under it otherwise
+bindsym $mod+Shift+s [class="Silentcast"] $work_in_temp,$enable_floating_fullscreen,$return_from_temp
+
+# "iconify"
+bindsym $mod+z [class="Silentcast"] $iconify
+
+# "deiconify" to stop ffmpeg and continue
+bindsym $mod+x [class="Silentcast"] $deiconify
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
