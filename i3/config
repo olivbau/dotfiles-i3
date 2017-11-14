@@ -57,6 +57,7 @@ bindsym $mod+z [class="Silentcast"] $iconify
 
 # "deiconify" to stop ffmpeg and continue
 bindsym $mod+x [class="Silentcast"] $deiconify
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -107,6 +108,20 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+###############################
+#        WORKSPACES           #
+###############################
+
+set $monitorRight  HDMI-1
+set $monitorLeft   DVI-D-1
+
+workspace 1 output $monitorLeft
+workspace 2 output $monitorRight
+workspace 3 output $monitorLeft
+workspace 4 output $monitorRight
+workspace 5 output $monitorLeft
+workspace 6 output $monitorRight
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -114,10 +129,9 @@ bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -126,10 +140,7 @@ bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -161,23 +172,25 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
-
 
 # startup
 exec --no-startup-id feh --bg-scale ~/.wallpaper/space.png
 exec --no-startup-id compton
-exec_always --no-startup-id"killall polybar;polybar -r default"
+exec --no-startup-id nm-applet
 
+# i3-gaps
 gaps inner 10
 smart_gaps on
 smart_borders on
+
 # window
 new_window pixel 2
 new_float pixel 2
-
 hide_edge_borders none
+
+
+# colors
 set_from_resource       $background_i3wmthemer  background
 set_from_resource	$foreground_i3wmthemer	foreground
 set_from_resource	$color00_i3wmthemer	color0
@@ -204,3 +217,24 @@ client.unfocused       	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthem
 client.focused_inactive	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
 client.urgent		#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
 client.placeholder	#FFCF76	$background_i3wmthemer	#FFCF76	$color00_i3wmthemer		$color00_i3wmthemer
+
+
+# Pulse Audio controls
+#increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+#decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
+#toggle mute sound
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
+
+# Media player controls
+bindsym XF86AudioPlay exec "playerctl play; clementine --play"
+bindsym XF86AudioPause exec "playerctl pause; clementine --pause"
+bindsym XF86AudioNext exec "playerctl next; clementine --next"
+bindsym XF86AudioPrev exec "playerctl previous; clementine --previous"
+
+bindsym $mod+XF86AudioLowerVolume exec "playerctl previous; clementine --previous"
+bindsym $mod+XF86AudioRaiseVolume exec "playerctl next; clementine --next"
+bindsym $mod+XF86AudioMute exec "clementine --play-pause"
+
+exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh

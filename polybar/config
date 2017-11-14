@@ -11,13 +11,15 @@ magenta = ${xrdb:color5}
 cyan = ${xrdb:color6}
 white = ${xrdb:color7}
 
+[settings]
+screenchange-reload = true
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 
-[bar/default]
-
+[bar/one]
+monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
 
@@ -32,9 +34,32 @@ module-margin-right = 1
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-tray-position = right
+tray-position = left
 tray-maxsize = 16
 tray-transparent = false
+
+modules-left =
+modules-center = xwindow
+modules-right = keyboard wlan eth volume battery calendar clock powermenu 
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[bar/two]
+monitor = ${env:MONITOR:DVI-D-1}
+width = 100%
+height = 27
+
+font-0 = fixed:pixelsize=10
+font-1 = FontAwesome:size=11
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 modules-left = i3
 modules-center = xwindow
@@ -45,7 +70,7 @@ scroll-down = i3wm-wsprev
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = net2
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>

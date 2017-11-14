@@ -10,6 +10,7 @@ cp -f ~/.config/compton.conf $dotdir/compton
 
 # polybar
 cp -f ~/.config/polybar/config $dotdir/polybar
+cp -f ~/.config/polybar/launch.sh $dotdir/polybar
 
 # xresources
 cp -f ~/.Xresources $dotdir/Xresources
