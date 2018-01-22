@@ -127,8 +127,10 @@ git clone https://github.com/olivbau/dotfiles.git ~/dotfiles
 sh ~/dotfiles/scripts/load.sh
 ```
 
-####9. Run load script
-
+#### 9. Run load script
+```shell
+win+shift+E
+```
 Logout and login and :bomb::boom:
 
 ### Copy dotfiles
