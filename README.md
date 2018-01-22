@@ -28,7 +28,7 @@ This is my linux ubuntu dotfiles
 * fonts-font-awesome
 
 ```shell
-sudo apt-get install rofi i3 rxvt-unicode compton fonts-roboto zsh arc-theme lxappearance feh fonts-font-awesome
+sudo apt-get install rofi i3 rxvt-unicode compton fonts-roboto zsh arc-theme lxappearance feh fonts-font-awesome git
 ```
 
 ### Other Packages
@@ -47,7 +47,7 @@ sudo apt-get install rofi i3 rxvt-unicode compton fonts-roboto zsh arc-theme lxa
 #### 1. Install official packages
 
 ```shell
-sudo apt-get install rofi i3 rxvt-unicode compton fonts-roboto zsh arc-theme lxappearance feh fonts-font-awesome
+sudo apt-get install rofi i3 rxvt-unicode compton fonts-roboto zsh arc-theme lxappearance feh fonts-font-awesome git
 ```
 
 #### 2. Change Windows Manager
