@@ -104,7 +104,7 @@ sudo apt-get install papirus-icon-theme
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
-#### 7. run lxappearence
+#### 7. run lxappearance
 
 1. Widget (Arc-Dark Roboto 10)
 
