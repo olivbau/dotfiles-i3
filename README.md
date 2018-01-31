@@ -146,7 +146,7 @@ Two main methods:
 ### Tips
 
 * Refresh i3: `win+shift+r`
-* Refresh .Xresources: `source ~/.Xresources`
+* Refresh .Xresources: `xrdb ~/.Xresources`
 * Set zsh as default shell: `chsh` and write `/bin/zsh`
 
 ## Screenshots
